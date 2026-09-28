@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentry | Application Performance Monitoring & Error Tracking</title>
+    <link rel="icon" href="assets/img/favicon.ico">
+
+    <!-- Rubik font from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="https://sentry.io/welcome/" class="logo">
+                <img src="assets/svg/sentry-wordmark.svg" alt="Sentry">
+            </a>
+
+            <!-- desktop links -->
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Platform <span class="arrow">&#8250;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-col">
+                            <h4>Products</h4>
+                            <a href="https://sentry.io/product/error-monitoring/">Error Monitoring</a>
+                            <a href="https://sentry.io/product/logs/">Logs</a>
+                            <a href="https://sentry.io/product/session-replay/">Session Replay</a>
+                            <a href="https://sentry.io/product/metrics/">Metrics <span class="new-tag">New</span></a>
+                            <a href="https://sentry.io/product/tracing/">Tracing</a>
+                            <a href="https://sentry.io/product/tracing/ai-agent/" class="sub-link">&bull; Agent Tracing</a>
+                            <a href="https://sentry.io/product/profiling/">Profiling</a>
+                            <a href="https://sentry.io/product/size-analysis/">Size Analysis</a>
+                            <a href="https://sentry.io/product/cron-monitoring/">Cron Monitoring</a>
+                            <a href="https://sentry.io/product/uptime-monitoring/">Uptime Monitoring</a>
+                            <a href="https://labs.sentry.dev/">Labs <span class="new-tag">New</span></a>
+                        </div>
+                        <div class="dropdown-col">
+                            <h4>AI Debugging</h4>
+                            <a href="https://sentry.io/product/seer/">Seer <span class="new-tag">New</span></a>
+                            <a href="https://sentry.io/product/seer/agent/" class="sub-link">&bull; Agent</a>
+                            <a href="https://sentry.io/product/seer/autofix/" class="sub-link">&bull; Autofix</a>
+                            <a href="https://sentry.io/product/seer/ai-code-review/" class="sub-link">&bull; AI Code Review</a>
+                        </div>
+                        <div class="dropdown-col grey-col">
+                            <h4>Integrations</h4>
+                            <a href="https://sentry.io/integrations/github/"><img src="assets/icons/github.png" alt="" class="small-icon"> Github</a>
+                            <a href="https://sentry.io/integrations/slack/"><img src="assets/icons/slack.png" alt="" class="small-icon"> Slack</a>
+                            <a href="https://cli.sentry.dev/">Sentry CLI</a>
+                            <a href="https://mcp.sentry.dev/">Sentry MCP</a>
+                            <a href="https://sentry.io/integrations/">All Integrations</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Solutions <span class="arrow">&#8250;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-col">
+                            <a href="https://sentry.io/for/full-stack/">Web / Full Stack Development</a>
+                            <a href="https://sentry.io/solutions/mobile-developers/">Mobile Crash Reporting</a>
+                            <a href="https://sentry.io/solutions/game-developers/">Game Crash Reporting</a>
+                            <a href="https://sentry.io/solutions/ai-observability/">AI Observability</a>
+                            <a href="https://sentry.io/solutions/application-performance-monitoring/">Application Performance Monitoring</a>
+                            <a href="https://sentry.io/solutions/application-observability/">Application Observability</a>
+                            <a href="https://sentry.io/solutions/real-user-monitoring-rum/">Real User Monitoring</a>
+                            <a href="https://sentry.io/solutions/ecommerce/">Ecommerce</a>
+                            <a href="https://sentry.io/solutions/opentelemetry/">OpenTelemetry</a>
+                            <a href="https://sentry.io/for/enterprise/">Enterprise</a>
+                            <a href="https://sentry.io/for/startups/">Startups</a>
+                            <a href="https://sentry.io/platforms/">All SDKs</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Resources <span class="arrow">&#8250;</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-col">
+                            <h4>Learn</h4>
+                            <a href="https://blog.sentry.io/">Blog</a>
+                            <a href="https://sentry.io/changelog/">Changelog</a>
+                            <a href="https://sandbox.sentry.io/">Sandbox</a>
+                            <a href="https://sentry.io/resources/">Resources</a>
+                            <a href="https://syntax.fm/">Syntax</a>
+                            <a href="https://sentry.io/customers/">Customers</a>
+                            <a href="https://sentry.io/cookbook/">Cookbook</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <h4>Support</h4>
+                            <a href="https://sentry.io/contact/enterprise/">Contact Us</a>
+                            <a href="https://help.sentry.io/">Help Center</a>
+                            <a href="https://status.sentry.io/">Status</a>
+                            <h4 class="second-heading">Hang out with us</h4>
+                            <a href="https://sentry.io/community/">Community</a>
+                            <a href="https://sentry.io/events/">Events</a>
+                            <a href="https://sentry.shop/">Merch</a>
+                        </div>
+                        <div class="dropdown-col grey-col cookbook">
+                            <img src="assets/icons/cookbook-social.jpg" alt="Sentry cookbook">
+                            <h3>Sentry Cookbook</h3>
+                            <p>Step-by-step recipes for debugging, monitoring, and fixing issues with Sentry.</p>
+                            <a href="https://sentry.io/cookbook/" class="btn btn-small btn-outline-dark">Explore Cookbook</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="https://docs.sentry.io/" class="nav-link">Docs</a></li>
+                <li><a href="https://sentry.io/pricing/" class="nav-link">Pricing</a></li>
+                <li><a href="https://sentry.io/auth/login/" class="nav-link">Sign In</a></li>
+                <li><a href="https://sentry.io/demo/" class="btn btn-outline">Get Demo</a></li>
+                <li><a href="https://sentry.io/signup/" class="btn btn-white">Get Started</a></li>
+            </ul>
+
+            <!-- mobile menu (checkbox hack so it works without js) -->
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" class="menu-label">Menu <span class="arrow">&#8250;</span></label>
+
+            <div class="mobile-menu">
+                <details>
+                    <summary>Platform</summary>
+                    <div class="mobile-links">
+                        <p class="mobile-heading">Products</p>
+                        <a href="https://sentry.io/product/error-monitoring/">Error Monitoring</a>
+                        <a href="https://sentry.io/product/logs/">Logs</a>
+                        <a href="https://sentry.io/product/session-replay/">Session Replay</a>
+                        <a href="https://sentry.io/product/metrics/">Metrics <span class="new-tag">New</span></a>
+                        <a href="https://sentry.io/product/tracing/">Tracing</a>
+                        <a href="https://sentry.io/product/tracing/ai-agent/">Agent Tracing</a>
+                        <a href="https://sentry.io/product/profiling/">Profiling</a>
+                        <a href="https://sentry.io/product/size-analysis/">Size Analysis</a>
+                        <a href="https://sentry.io/product/cron-monitoring/">Cron Monitoring</a>
+                        <a href="https://sentry.io/product/uptime-monitoring/">Uptime Monitoring</a>
+                        <a href="https://labs.sentry.dev/">Labs <span class="new-tag">New</span></a>
+
+                        <p class="mobile-heading">AI Debugging</p>
+                        <a href="https://sentry.io/product/seer/">Seer <span class="new-tag">New</span></a>
+                        <a href="https://sentry.io/product/seer/agent/">Agent</a>
+                        <a href="https://sentry.io/product/seer/autofix/">Autofix</a>
+                        <a href="https://sentry.io/product/seer/ai-code-review/">AI Code Review</a>
+
+                        <p class="mobile-heading">Integrations</p>
+                        <a href="https://sentry.io/integrations/github/">Github</a>
+                        <a href="https://sentry.io/integrations/slack/">Slack</a>
+                        <a href="https://cli.sentry.dev/">Sentry CLI</a>
+                        <a href="https://mcp.sentry.dev/">Sentry MCP</a>
+                        <a href="https://sentry.io/integrations/">All Integrations</a>
+                    </div>
+                </details>
+                <details>
+                    <summary>Solutions</summary>
+                    <div class="mobile-links">
+                        <a href="https://sentry.io/for/full-stack/">Web / Full Stack Development</a>
+                        <a href="https://sentry.io/solutions/mobile-developers/">Mobile Crash Reporting</a>
+                        <a href="https://sentry.io/solutions/game-developers/">Game Crash Reporting</a>
+                        <a href="https://sentry.io/solutions/ai-observability/">AI Observability</a>
+                        <a href="https://sentry.io/solutions/application-performance-monitoring/">Application Performance Monitoring</a>
+                        <a href="https://sentry.io/solutions/application-observability/">Application Observability</a>
+                        <a href="https://sentry.io/solutions/real-user-monitoring-rum/">Real User Monitoring</a>
+                        <a href="https://sentry.io/solutions/ecommerce/">Ecommerce</a>
+                        <a href="https://sentry.io/solutions/opentelemetry/">OpenTelemetry</a>
+                        <a href="https://sentry.io/for/enterprise/">Enterprise</a>
+                        <a href="https://sentry.io/for/startups/">Startups</a>
+                        <a href="https://sentry.io/platforms/">All SDKs</a>
+                    </div>
+                </details>
+                <details>
+                    <summary>Resources</summary>
+                    <div class="mobile-links">
+                        <p class="mobile-heading">Learn</p>
+                        <a href="https://blog.sentry.io/">Blog</a>
+                        <a href="https://sentry.io/changelog/">Changelog</a>
+                        <a href="https://sandbox.sentry.io/">Sandbox</a>
+                        <a href="https://sentry.io/resources/">Resources</a>
+                        <a href="https://syntax.fm/">Syntax</a>
+                        <a href="https://sentry.io/customers/">Customers</a>
+                        <a href="https://sentry.io/cookbook/">Cookbook</a>
+
+                        <p class="mobile-heading">Support</p>
+                        <a href="https://sentry.io/contact/enterprise/">Contact Us</a>
+                        <a href="https://help.sentry.io/">Help Center</a>
+                        <a href="https://status.sentry.io/">Status</a>
+
+                        <p class="mobile-heading">Hang out with us</p>
+                        <a href="https://sentry.io/community/">Community</a>
+                        <a href="https://sentry.io/events/">Events</a>
+                        <a href="https://sentry.shop/">Merch</a>
+                    </div>
+                </details>
+                <a href="https://docs.sentry.io/" class="mobile-link">Docs</a>
+                <a href="https://sentry.io/pricing/" class="mobile-link">Pricing</a>
+                <a href="https://sentry.io/auth/login/" class="mobile-link">Sign In</a>
+                <div class="mobile-buttons">
+                    <a href="https://sentry.io/demo/" class="btn btn-outline">Get Demo</a>
+                    <a href="https://sentry.io/signup/" class="btn btn-white">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <div class="stars-bg">
+        <section class="hero">
+            <div class="container">
+                <a href="https://mcp.sentry.dev" class="announcement">Sentry MCP: fix production issues right from your LLM &nbsp;&#10132;</a>
+                <h1>Code <span class="breaks">breaks,</span> fix it faster</h1>
+                <p class="hero-text">Application monitoring software considered "not bad" by millions of developers.</p>
+                <div class="hero-buttons">
+                    <a href="https://sentry.io/signup/" class="btn btn-white">Get Started</a>
+                    <a href="https://sentry.io/demo/" class="btn btn-outline">Get Demo</a>
+                </div>
+            </div>
+            <img src="assets/img/hero-animation-poster.webp" alt="Sentry mascot scanning errors, replays, logs and traces" class="hero-img">
+        </section>
+
+        <!-- ================= LOGOS ================= -->
+        <section class="logos-section">
+            <div class="container">
+                <img src="assets/img/ufo-abduction-image.webp" alt="ufo" class="ufo">
+                <div class="logo-slider">
+                    <!-- logos are repeated twice so the animation can loop -->
+                    <div class="logo-track">
+                        <img src="assets/logos/github.svg" alt="GitHub">
+                        <img src="assets/logos/disney.svg" alt="Disney" class="tall">
+                        <img src="assets/logos/atlassian.svg" alt="Atlassian" class="wide">
+                        <img src="assets/logos/linear.svg" alt="Linear">
+                        <img src="assets/logos/vercel.svg" alt="Vercel">
+                        <img src="assets/logos/cloudflare.svg" alt="Cloudflare">
+                        <img src="assets/logos/slack.svg" alt="Slack">
+                        <img src="assets/logos/metronome.svg" alt="Metronome" class="wide">
+                        <img src="assets/logos/autodesk.svg" alt="Autodesk">
+                        <img src="assets/logos/microsoft.svg" alt="Microsoft">
+                        <img src="assets/logos/instacart.svg" alt="Instacart">
+                        <img src="assets/logos/lyft.svg" alt="Lyft">
+                        <img src="assets/logos/bolt.svg" alt="Bolt">
+                        <img src="assets/logos/monday.svg" alt="Monday">
+                        <img src="assets/logos/cursor.svg" alt="Cursor">
+                        <img src="assets/logos/anthropic.svg" alt="Anthropic" class="wide">
+                        <img src="assets/logos/factory-ai.svg" alt="Factory AI">
+                        <img src="assets/logos/sentry.svg" alt="Sentry">
+                        <img src="assets/logos/baseten.svg" alt="Baseten">
+                        <img src="assets/logos/runlayer.svg" alt="Runlayer">
+                        <img src="assets/logos/convex.svg" alt="Convex">
+                        <img src="assets/logos/supabase.svg" alt="Supabase">
+
+                        <img src="assets/logos/github.svg" alt="GitHub">
+                        <img src="assets/logos/disney.svg" alt="Disney" class="tall">
+                        <img src="assets/logos/atlassian.svg" alt="Atlassian" class="wide">
+                        <img src="assets/logos/linear.svg" alt="Linear">
+                        <img src="assets/logos/vercel.svg" alt="Vercel">
+                        <img src="assets/logos/cloudflare.svg" alt="Cloudflare">
+                        <img src="assets/logos/slack.svg" alt="Slack">
+                        <img src="assets/logos/metronome.svg" alt="Metronome" class="wide">
+                        <img src="assets/logos/autodesk.svg" alt="Autodesk">
+                        <img src="assets/logos/microsoft.svg" alt="Microsoft">
+                        <img src="assets/logos/instacart.svg" alt="Instacart">
+                        <img src="assets/logos/lyft.svg" alt="Lyft">
+                        <img src="assets/logos/bolt.svg" alt="Bolt">
+                        <img src="assets/logos/monday.svg" alt="Monday">
+                        <img src="assets/logos/cursor.svg" alt="Cursor">
+                        <img src="assets/logos/anthropic.svg" alt="Anthropic" class="wide">
+                        <img src="assets/logos/factory-ai.svg" alt="Factory AI">
+                        <img src="assets/logos/sentry.svg" alt="Sentry">
+                        <img src="assets/logos/baseten.svg" alt="Baseten">
+                        <img src="assets/logos/runlayer.svg" alt="Runlayer">
+                        <img src="assets/logos/convex.svg" alt="Convex">
+                        <img src="assets/logos/supabase.svg" alt="Supabase">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= DEVELOPER FIRST ================= -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Developer first.<br><span>Always.</span></h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="img-border">
+                        <img src="assets/img/install-1-line.webp" alt="terminal window showing npm install @sentry/browser">
+                    </div>
+                    <h3>Monitor in five lines</h3>
+                    <p>Drop in the <a href="https://sentry.io/platforms/">SDK</a>. No agents to install. No performance surprises.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="img-border">
+                        <img src="assets/img/automatic-rca.webp" alt="root cause section explaining a bug in the code">
+                    </div>
+                    <h3>Automatically root-cause any issue</h3>
+                    <p>Catch critical issues before you merge and fix them when they hit prod with <a href="https://sentry.io/product/seer/">Seer, our debugging agent and code reviewer</a>.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="img-border">
+                        <img src="assets/img/agent-tracing.webp" alt="agent tracing UI with spans for chat, handoff and tool calls">
+                    </div>
+                    <h3>Babysit the bots</h3>
+                    <p><a href="https://sentry.io/product/tracing/ai-agent/">Agent tracing</a> helps you catch unexpected output issues, bad tool calls and visualize the spend and performance across all your agents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="img-border">
+                        <img src="assets/img/mcp-integration.webp" alt="chat showing Sentry agent connected">
+                    </div>
+                    <h3>Stay in the flow</h3>
+                    <p>From <a href="https://sentry.io/integrations/github/">GitHub</a>, <a href="https://sentry.io/integrations/slack/">Slack</a>, <a href="https://sentry.io/integrations/jira/">Jira</a>, and <a href="https://sentry.io/integrations/linear/">Linear</a> to coding agents with <a href="https://mcp.sentry.dev/">Sentry's MCP server</a>, Sentry brings full context to every fix from dev to prod.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= TABS SECTIONS ================= -->
+    <div class="stars-bg">
+        <!-- tabs 1 -->
+        <section class="tab-section">
+            <div class="container">
+                <h2 class="section-title">Everything's<br><span>connected</span></h2>
+                <p class="section-subtitle">Yeah, other tools exist. But <a href="https://sentry.io/product/error-monitoring/">errors</a>, <a href="https://sentry.io/product/logs/">logs</a>, <a href="https://sentry.io/product/session-replay/">replays</a>, <a href="https://sentry.io/product/tracing/">spans</a>, <a href="https://sentry.io/product/profiling/">profiles</a>, and <a href="https://sentry.io/product/metrics/">metrics</a> — all connected by the same trace? That's kind of our thing.</p>
+
+                <!-- radio buttons for the tabs (hidden) -->
+                <input type="radio" name="tabs1" id="tab1-1" checked>
+                <input type="radio" name="tabs1" id="tab1-2">
+                <input type="radio" name="tabs1" id="tab1-3">
+
+                <div class="tabs">
+                    <div class="tab-list">
+                        <h3>Go from Issue → Context → Fix.</h3>
+                        <label for="tab1-1" class="tab tab-1">Debug 500's, trace slow requests, replay fetch() failures, and fix the broken code that caused it.</label>
+                        <label for="tab1-2" class="tab tab-2">Catch slow queries, N+1s, and request timeouts before the 'why is this so slow?' posts fill up your feed.</label>
+                        <label for="tab1-3" class="tab tab-3">Map every incident to the release, PR, and owner -- automatically.</label>
+                    </div>
+                    <div class="tab-images">
+                        <img src="assets/img/tabs-a-1.webp" alt="session replay showing a user's checkout errors" class="tab-img img-1">
+                        <img src="assets/img/tabs-a-2.webp" alt="trace waterfall for a POST request with AI spans" class="tab-img img-2">
+                        <img src="assets/img/tabs-a-3.webp" alt="issue view with an unhandled exception and code context" class="tab-img img-3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tabs 2 -->
+        <section class="tab-section">
+            <div class="container">
+                <h2 class="section-title">Debugging needs context—<br><span>with or without AI</span></h2>
+                <p class="section-subtitle"><a href="https://sentry.io/product/seer/">Seer</a>, our AI debugger, uses Sentry context – logs, commits, traces, stack trace - so you can stop guessing and <em>it</em> can fix issues for you.</p>
+
+                <input type="radio" name="tabs2" id="tab2-1" checked>
+                <input type="radio" name="tabs2" id="tab2-2">
+                <input type="radio" name="tabs2" id="tab2-3">
+
+                <div class="tabs">
+                    <div class="tab-list">
+                        <label for="tab2-1" class="tab tab-1">Analyzes every signal to explain why your code failed, not just where.</label>
+                        <label for="tab2-2" class="tab tab-2">Fixes what's broken while you ship what's next – generating precise, merge-ready patches.</label>
+                        <label for="tab2-3" class="tab tab-3">Stops bad code before it starts bad days. Correlating PRs against real error and performance history to catch regressions before they ship.</label>
+                    </div>
+                    <div class="tab-images">
+                        <img src="assets/img/tabs-b-1.webp" alt="Seer root cause analysis for a timeout error" class="tab-img img-1">
+                        <img src="assets/img/tabs-b-2.webp" alt="code diff with a fix for database timeouts" class="tab-img img-2">
+                        <img src="assets/img/tabs-b-3.webp" alt="Seer code review comment on GitHub" class="tab-img img-3">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Loved by developers<br><span>worldwide</span></h2>
+            <div class="testimonial-row">
+                <div class="testimonial">
+                    <img src="assets/img/quotemark.png" alt="" class="quote-mark">
+                    <p class="quote">We wouldn't have scaled without Sentry. Most of our incidents are hardware-related—and we debug them all inside Sentry</p>
+                    <div class="person">
+                        <img src="assets/img/logo-anthropic.webp" alt="Anthropic">
+                        <div>
+                            <p class="name">Nova DasSarma</p>
+                            <p class="role">Systems Lead, Anthropic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="assets/img/quotemark.png" alt="" class="quote-mark">
+                    <p class="quote">Sentry's high-quality tooling helps Disney+ maintain high-quality service to its tens of millions of global subscribers.</p>
+                    <div class="person">
+                        <img src="assets/img/logo-disney.png" alt="Disney+">
+                        <div>
+                            <p class="name">Andrew Hay</p>
+                            <p class="role">Director at Disney Streaming Services, Disney+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="assets/img/quotemark.png" alt="" class="quote-mark">
+                    <p class="quote">The signal we get from Sentry is the most reliable indicator of software issues and is used throughout Instacart because it can be easily configured for each service regardless of the language or framework.</p>
+                    <div class="person">
+                        <img src="assets/img/logo-instacart.webp" alt="Instacart">
+                        <div>
+                            <p class="name">Igor Dobrovitski</p>
+                            <p class="role">Infrastructure Software Engineer, Instacart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= GET STARTED ================= -->
+    <section class="get-started">
+        <div class="container">
+            <h2 class="section-title">Get started<br><span>in minutes</span></h2>
+            <p class="get-started-text">Five lines of code. That's it. No complex setup, no performance hits, no waiting around.</p>
+
+            <!-- platform picker, same radio trick as the tabs -->
+            <input type="radio" name="platform" id="nextjs" checked>
+            <input type="radio" name="platform" id="react">
+            <input type="radio" name="platform" id="node">
+            <input type="radio" name="platform" id="python">
+            <input type="radio" name="platform" id="android">
+            <input type="radio" name="platform" id="ios">
+
+            <div class="platform-buttons">
+                <label for="nextjs" class="l-nextjs">Next.js</label>
+                <label for="react" class="l-react">React</label>
+                <label for="node" class="l-node">Node.js</label>
+                <label for="python" class="l-python">Python</label>
+                <label for="android" class="l-android">Android</label>
+                <label for="ios" class="l-ios">iOS</label>
+            </div>
+
+            <div class="code-area">
+                <div class="snippet snippet-nextjs">
+                    <p>See -- it's really just one command.</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>npx @sentry/wizard@latest -i nextjs</pre>
+                    </div>
+                </div>
+
+                <div class="snippet snippet-react">
+                    <p>Grab the <a href="https://github.com/getsentry/sentry-javascript/">Sentry React SDK</a>:</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>npm install @sentry/react</pre>
+                    </div>
+                    <p>Then put the Sentry init code in its own file and import it first in your app:</p>
+                    <div class="code-box">
+                        <div class="code-top">JSX</div>
+<pre>import * as Sentry from "@sentry/react";
+
+Sentry.init({
+  dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+  integrations: [],
+<span class="comment">  // Set `tracePropagationTargets` to control for which URLs trace propagation should be enabled</span>
+  tracePropagationTargets: [/^\//, /^https:\/\/yourserver\.io\/api/],
+});</pre>
+                    </div>
+                </div>
+
+                <div class="snippet snippet-node">
+                    <p>Grab the <a href="https://github.com/getsentry/sentry-javascript/">Sentry Node SDK</a>:</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>npm install @sentry/node</pre>
+                    </div>
+                    <p>Configure your SDK:</p>
+                    <div class="code-box">
+                        <div class="code-top">JavaScript</div>
+<pre>const Sentry = require('@sentry/node');
+Sentry.init({ dsn: 'https://&lt;key&gt;@sentry.io/&lt;project&gt;' });</pre>
+                    </div>
+                </div>
+
+                <div class="snippet snippet-python">
+                    <p>Grab the <a href="https://github.com/getsentry/sentry-python">Sentry Python SDK</a>:</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>pip install --upgrade sentry-sdk</pre>
+                    </div>
+                    <p>Configure your DSN:</p>
+                    <div class="code-box">
+                        <div class="code-top">Python</div>
+<pre>import sentry_sdk
+
+sentry_sdk.init(
+    "https://&lt;key&gt;@sentry.io/&lt;project&gt;",
+
+<span class="comment">    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for Tracing.
+    # We recommend adjusting this value in production.</span>
+    enable_tracing=True,
+    traces_sample_rate=1.0,
+)</pre>
+                    </div>
+                </div>
+
+                <div class="snippet snippet-android">
+                    <p>Just run this command to sign up for and install Sentry.</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>brew install getsentry/tools/sentry-wizard &amp;&amp; sentry-wizard -i android</pre>
+                    </div>
+                </div>
+
+                <div class="snippet snippet-ios">
+                    <p>Signup and install Sentry with just one line of code:</p>
+                    <div class="code-box">
+                        <div class="code-top">Bash</div>
+<pre>brew install getsentry/tools/sentry-wizard &amp;&amp; sentry-wizard -i ios</pre>
+                    </div>
+                </div>
+
+                <img src="assets/img/getting-started-img-left.webp" alt="" class="side-img left-img">
+                <img src="assets/img/getting-started-img-right.webp" alt="" class="side-img right-img">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SECURITY ================= -->
+    <section class="security">
+        <div class="container">
+            <h2 class="section-title">Built to be secure,<br><span>Designed to not get in your way</span></h2>
+            <p class="security-text">Security and compliance aren't just checkboxes—they're built into how we run Sentry. We use industry-standard tech and practices to keep your data safe, and we stay out of your way while doing it.</p>
+            <div class="badges">
+                <img src="assets/svg/badge-1.svg" alt="GDPR">
+                <img src="assets/svg/badge-2.svg" alt="SOC 2 Type II">
+                <img src="assets/svg/badge-3.svg" alt="ISO 27001">
+                <img src="assets/svg/badge-4.svg" alt="HIPAA">
+            </div>
+            <div class="security-buttons">
+                <a href="https://sentry.io/privacy/" class="btn btn-grey">Check out our Privacy Policy</a>
+                <a href="https://sentry.io/contact/enterprise/" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section id="newsletter">
+        <div class="container">
+            <h2 class="section-title">Get monthly product updates<br><span>from our newsletter</span></h2>
+            <div class="newsletter-box">
+                <form action="#newsletter" class="newsletter-form">
+                    <label for="email">YOUR EMAIL:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="consent" required>
+                        I want to receive the monthly newsletter and other updates from Sentry. You may unsubscribe at any time.
+                    </label>
+                    <p class="small-print">By filling out this form, you agree to our <a href="https://sentry.io/privacy/">privacy policy</a>. This form is protected by reCAPTCHA and Google's <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+                    <button type="submit" class="btn btn-white">Sign Up</button>
+                </form>
+                <img src="assets/img/home-spot-404.webp" alt="cartoon of the Sentry logo watching developers get lost in debugging" class="newsletter-img">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FIX IT ================= -->
+    <section class="fix-it">
+        <div class="container">
+            <h2 class="section-title">Fix It</h2>
+            <p class="fixit-text">Get started with the only application monitoring platform that empowers developers to fix application problems without compromising on velocity.</p>
+            <div class="fixit-buttons">
+                <a href="https://sentry.io/signup/" class="btn btn-white">Try Sentry for Free</a>
+                <a href="https://sentry.io/demo/" class="btn btn-outline">Get a Demo</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="https://sentry.io/about/">About</a>
+                    <a href="https://blog.sentry.io/">Blog</a>
+                    <a href="https://sentry.io/careers/">Careers</a>
+                    <a href="https://sentry.io/contact/enterprise/">Contact Us</a>
+                    <a href="https://sentry.io/trust/">Trust</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="https://sentry.io/product/error-monitoring/">Error Monitoring</a>
+                    <a href="https://sentry.io/product/logs/">Logs</a>
+                    <a href="https://sentry.io/product/seer/">Seer</a>
+                    <a href="https://sentry.io/product/session-replay/">Session Replay</a>
+                    <a href="https://sentry.io/product/metrics/">Metrics</a>
+                    <a href="https://sentry.io/product/tracing/">Tracing</a>
+                    <a href="https://sentry.io/product/uptime-monitoring/">Uptime Monitoring</a>
+                    <a href="https://sentry.io/product/profiling/">Profiling</a>
+                    <a href="https://sentry.io/product/cron-monitoring/">Cron Monitoring</a>
+                    <a href="https://sentry.io/integrations/">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <a href="https://sentry.io/for/full-stack/">Web / Full Stack Development</a>
+                    <a href="https://sentry.io/solutions/mobile-developers/">Mobile Crash Reporting</a>
+                    <a href="https://sentry.io/solutions/game-developers/">Game Crash Reporting</a>
+                    <a href="https://sentry.io/solutions/ai-observability/">AI Observability</a>
+                    <a href="https://sentry.io/solutions/application-performance-monitoring/">Application Performance Monitoring</a>
+                    <a href="https://sentry.io/solutions/application-observability/">Application Observability</a>
+                    <a href="https://sentry.io/solutions/real-user-monitoring-rum/">Real User Monitoring</a>
+                    <a href="https://sentry.io/solutions/ecommerce/">Ecommerce</a>
+                    <a href="https://sentry.io/for/enterprise/">Enterprise</a>
+                    <a href="https://sentry.io/for/startups/">Startups</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <a href="https://docs.sentry.io/">Docs</a>
+                    <a href="https://help.sentry.io/">Help Center</a>
+                    <a href="https://status.sentry.io/">Status</a>
+                    <a href="https://sentry.io/cookbook/">Cookbook</a>
+                    <a href="https://develop.sentry.dev/getting-started/">Dev Resources</a>
+                </div>
+            </div>
+
+            <div class="wave"></div>
+
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="https://sentry.io/terms/">Terms</a>
+                    <a href="https://sentry.io/security/">Security &amp; Compliance</a>
+                    <a href="https://sentry.io/privacy/">Privacy</a>
+                </div>
+                <div class="footer-logos">
+                    <a href="https://sentry.io/"><img src="assets/svg/sentry-glyph.svg" alt="Sentry"></a>
+                    <a href="https://opensourcepledge.com/members/sentry/"><img src="assets/svg/oss-pledge.svg" alt="Open Source Pledge"></a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://x.com/sentry/"><img src="assets/icons/x-twitter.png" alt="X"></a>
+                    <a href="https://github.com/getsentry/"><img src="assets/icons/github.png" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/company/getsentry/"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://discord.gg/sentry"><img src="assets/icons/discord.png" alt="Discord"></a>
+                </div>
+            </div>
+            <p class="copyright">© 2026 • Sentry is a registered Trademark of Functional Software, Inc.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
