@@ -5,7 +5,7 @@ It's made with only HTML and CSS, no JavaScript.
 
 ## How to run
 
-Just open `index.html` in the browser. (Needs internet for the Rubik font from Google Fonts.)
+Just open `index.html` in the browser.
 
 ## Files
 
